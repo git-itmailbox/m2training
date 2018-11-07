@@ -3,7 +3,6 @@
     <preference for="Training\TestOM\Model\ManagerInterface" type="Training\AdditionalTestOM\Model\ManagerCustom" />
     <type name="Training\TestOM\Model\Test">
         <arguments>
-            <argument name="manager" xsi:type="object">Training\TestOM\Model\Manager</argument>
             <argument name="name" xsi:type="string">Custom String from AdditionalTestOM</argument>
             <argument name="number" xsi:type="number">420</argument>
             <argument name="arrayList" xsi:type="array">
