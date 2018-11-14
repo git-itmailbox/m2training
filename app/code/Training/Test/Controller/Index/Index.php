@@ -20,9 +20,6 @@ class Index extends \Magento\Framework\App\Action\Action
     {
         $resultRaw = $this->resultRawFactory->create();
         $resultRaw->setContents('<h2>simple text</h2>');
-        //just for fun test
-        $resultRaw->setStatusHeader(402);
-
         return $resultRaw;
     }
 }
