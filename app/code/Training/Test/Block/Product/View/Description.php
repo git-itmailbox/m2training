@@ -9,4 +9,5 @@ class Description extends \Magento\Catalog\Block\Product\View\Description
     ) {
         $subject->getProduct()->setDescription('Test description');
     }
+
 }
