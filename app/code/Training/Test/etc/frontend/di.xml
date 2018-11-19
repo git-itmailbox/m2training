@@ -3,6 +3,10 @@
     <type name="Magento\Framework\View\Element\Template">
         <plugin name="training_test" type="Training\Test\Plugin\Block\Template" />
     </type>
+    <type name="Magento\Catalog\Block\Product\View\Description">
+        <plugin name="product-view-description-plugin"
+                type="Training\Test\Block\Product\View\Description" sortOrder="10"/>
+    </type>
     <type name="Magento\Framework\App\Router\NoRouteHandlerList">
         <arguments>
             <argument name="handlerClassesList" xsi:type="array">

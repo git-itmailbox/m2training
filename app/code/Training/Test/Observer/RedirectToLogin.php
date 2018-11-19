@@ -35,17 +35,17 @@ class RedirectToLogin implements ObserverInterface
     }
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
-        $request = $observer->getEvent()->getData('request');
-//        var_dump($request); exit();
-        if ($request->getModuleName() == 'catalog'
-            && $request->getControllerName() == 'product'
-            && $request->getActionName() == 'view'
-            && ! $this->customerSession->isLoggedIn()
-        ) {
-// if ($request->getFullActionName() == 'catalog_product_view') { // altenative way
-            $controller = $observer->getEvent()->getData('controller_action');
-            $this->actionFlag->set('', \Magento\Framework\App\Action\Action::FLAG_NO_DISPATCH, true);
-            $this->redirect->redirect($controller->getResponse(), 'customer/account/login');
-        }
+//        $request = $observer->getEvent()->getData('request');
+////        var_dump($request); exit();
+//        if ($request->getModuleName() == 'catalog'
+//            && $request->getControllerName() == 'product'
+//            && $request->getActionName() == 'view'
+//            && ! $this->customerSession->isLoggedIn()
+//        ) {
+//// if ($request->getFullActionName() == 'catalog_product_view') { // altenative way
+//            $controller = $observer->getEvent()->getData('controller_action');
+//            $this->actionFlag->set('', \Magento\Framework\App\Action\Action::FLAG_NO_DISPATCH, true);
+//            $this->redirect->redirect($controller->getResponse(), 'customer/account/login');
+//        }
     }
 }
