@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="yuritbox_currency" template="Yuritbox_Currency::play_with_currency.phtml" />
+        </referenceContainer>
+        <referenceBlock name="testargument">
+            <arguments>
+                <argument name="background_color" xsi:type="string">red</argument>
+            </arguments>
+        </referenceBlock>
+        <!--<arguments>-->
+        <!--&lt;!&ndash;<argument name="view_model" xsi:type="object">Yuritbox\Currency\ViewModel\Currency</argument>&ndash;&gt;-->
+        <!--</arguments>-->
+        <!--</block>-->
+
+    </body>
+
+</page>

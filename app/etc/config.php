@@ -131,6 +131,8 @@ return [
         'Training_Render' => 1,
         'Training_Test' => 1,
         'Training_AdditionalTestOM' => 1,
-        'Vertex_Tax' => 1
+        'Vertex_Tax' => 1,
+        'Yuritbox_Currency' => 1,
+        'Yuritbox_Showmexml' => 0
     ]
 ];
