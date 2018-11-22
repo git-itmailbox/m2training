@@ -1,1 +1,24 @@
+<?php
+/* @var $view_model \Yuritbox\Currency\ViewModel\Currency */
+$view_model = $block->getData('view_model');
+?>
 <h1>Currencies's sandbox</h1>
+<p> CurrentCurrencyCode: <b><?= $view_model->getCurrentCurrencyCode() ?> </b></p>
+<p> CurrentCurrencyRate: <b><?= $view_model->getCurrentCurrencyRate() ?></b> </p>
+<p> CurrentCurrencySymbol: <b><?= $view_model->getCurrentCurrencySymbol() ?></b> </p>
+<p> DefaultCurrencyCode: <b><?= $view_model->getDefaultCurrencyCode() ?></b> </p>
+<table>
+    <thead>
+    <tr>
+        <th>Key</th>
+        <th>Currency</th>
+    </tr>
+    </thead>
+    <?php foreach ( $view_model->getAllowedCurrencies() as $key => $item): ?>
+    <tr class="row">
+        <td class="col-sm-3"> <?=$key?> </td>
+        <td class="col-sm-3"> <?=$item?> </td>
+    </tr>
+<?php endforeach; ?>
+
+</table>

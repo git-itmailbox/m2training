@@ -2,7 +2,7 @@
 
 namespace Yuritbox\Currency\ViewModel;
 
-class Currency
+class Currency implements \Magento\Framework\View\Element\Block\ArgumentInterface
 {
     protected $storeManager;
     protected $currency;
