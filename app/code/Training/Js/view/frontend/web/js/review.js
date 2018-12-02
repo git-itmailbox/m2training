@@ -23,10 +23,9 @@ define([
                 dataType: 'json'})
                 .done(function (data) {
                     var dataJson = JSON.parse(data);
-                    if (dataJson.name && dataJson.message) {
+                    if (dataJson && dataJson.name && dataJson.message) {
                         self.reviewerName(dataJson.name);
                         self.reviewerMessage(dataJson.message);
-                        console.log(dataJson, self.reviewerName(), self.reviewerMessage());
                     }
                 }).always(function () {
                 self.isLoading(false);
