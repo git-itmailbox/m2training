@@ -24,7 +24,7 @@ class Index extends \Magento\Framework\App\Action\Action
     public function execute()
     {
         $result = $this->jsonResultFactory->create();
-        $result->setData(json_encode($this->getRandomReviewData()));
+        $result->setData($this->getRandomReviewData());
         return $result;
     }
     /**

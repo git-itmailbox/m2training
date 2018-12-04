@@ -22,10 +22,9 @@ define([
                 type: 'post',
                 dataType: 'json'})
                 .done(function (data) {
-                    var dataJson = JSON.parse(data);
-                    if (dataJson && dataJson.name && dataJson.message) {
-                        self.reviewerName(dataJson.name);
-                        self.reviewerMessage(dataJson.message);
+                    if (data.name && data.message) {
+                        self.reviewerName(data.name);
+                        self.reviewerMessage(data.message);
                     }
                 }).always(function () {
                 self.isLoading(false);
