@@ -1,0 +1,10 @@
+<div class="quantity-checker-box" data-bind="blockLoader: isLoading">
+    <h3 data-bind="i18n: 'Quantity Checker'"></h3>
+    <div class="quantity-checker">
+        <span data-bind="text: showQuantity()"></span>
+        <span data-bind="text: quantity()"></span>
+        <button type="button"
+                class="action primary"
+                data-bind="i18n: 'Check store quantity', click: quantityCheck"></button>
+    </div>
+</div>

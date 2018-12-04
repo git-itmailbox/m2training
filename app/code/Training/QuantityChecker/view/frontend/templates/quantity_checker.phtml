@@ -1,0 +1,29 @@
+<?php
+/*
+ * @var $viewModel Training\QuantityChecker\ViewModel\QuantityChecker
+ */
+$viewModel = $block->getViewModel();
+?>
+<div data-bind="scope: 'quantityChecker'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "quantityChecker": {
+                    "component": "Training_QuantityChecker/js/quantity_checker",
+                    "config": {
+                        "template": "Training_QuantityChecker/quantity_checker",
+                        "url": <?= json_encode($block->getUrl('training_quantity/check/index',[
+                                'product_id' => $viewModel->getCurProductId()
+                                    ])) ?>
+
+                    }
+                }
+            }
+        }
+    }
+}
+</script>
