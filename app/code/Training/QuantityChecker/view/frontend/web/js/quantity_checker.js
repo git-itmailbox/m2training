@@ -17,7 +17,7 @@ define([
             self = this;
 
             this.showQuantity = ko.computed(function () {
-                return ( this.quantity() + "").length > 0
+                return ( self.quantity() + "").length > 0
             });
 
             this._super();
