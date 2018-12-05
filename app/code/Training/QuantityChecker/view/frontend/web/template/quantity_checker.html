@@ -1,10 +1,17 @@
 <div class="quantity-checker-box" data-bind="blockLoader: isLoading">
-    <h3 data-bind="i18n: 'Quantity Checker'"></h3>
-    <div class="quantity-checker">
-        <span data-bind="text: showQuantity()"></span>
-        <span data-bind="text: quantity()"></span>
+    <h4 data-bind="i18n: 'Quantity Checker'"></h4>
+    <div class="quantity-checker stock available">
+        <!-- ko if: (showQuantity) -->
+        <span>Available quantity: </span>
+        <span data-bind="text: quantity"></span>
+        <!-- /ko -->
+
         <button type="button"
                 class="action primary"
                 data-bind="i18n: 'Check store quantity', click: quantityCheck"></button>
+        <button type="button"
+                class="action"
+                data-bind="i18n: 'Hide store quantity', click: hideQuantity"></button>
+
     </div>
 </div>

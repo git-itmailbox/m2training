@@ -4,38 +4,45 @@ define([
     'ko'
 ], function (Component, $, ko) {
     'use strict';
+
+    var self;
+
     return Component.extend({
         quantity: ko.observable(''),
-        showQuantity: ko.observable(false),
-        // showQuantity: ko.computed(function()
-        // {
-        //     return this.quantity.length > 0;
-        // }),
+        // showQuantity: ko.observable(false),
+
         isLoading: ko.observable(false),
         url: '',
         initialize: function () {
+            self = this;
+
+            this.showQuantity = ko.computed(() => ( this.quantity() + "").length > 0 );
             this._super();
             return this;
         },
+
+        hideQuantity: function () {
+            self.quantity('');
+        },
         quantityCheck: function () {
             this.isLoading(true);
-            var self = this;
             $.ajax({
                 url: self.url,
                 type: 'post',
-                dataType: 'json'})
+                dataType: 'json'
+            })
                 .done(function (data) {
-                    if (data.qty ) {
+                    if (data.qty) {
                         self.quantity(data.qty);
                     }
                 })
-                .fail(function( jqXHR, textStatus ) {
-                    alert( "Request failed: " + textStatus );
+                .fail(function (jqXHR, textStatus) {
+                    alert("Request failed: " + textStatus);
                     self.quantity('');
                 })
                 .always(function () {
-                self.isLoading(false);
-            });
+                    self.isLoading(false);
+                });
         }
     });
 });

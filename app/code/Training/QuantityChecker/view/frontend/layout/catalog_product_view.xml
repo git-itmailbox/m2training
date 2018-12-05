@@ -3,9 +3,11 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="product.info.type">
-            <block name="quantity_checker" before="-" template="Training_QuantityChecker::quantity_checker.phtml">
+            <block name="quantity_checker" before="-" template="Training_QuantityChecker::quantity_checker.phtml"
+                   class="Training\QuantityChecker\Block\CheckQty">
                 <arguments>
-                    <argument name="view_model" xsi:type="object">Training\QuantityChecker\ViewModel\QuantityChecker</argument>
+                    <argument name="view_model" xsi:type="object">Training\QuantityChecker\ViewModel\QuantityChecker
+                    </argument>
                 </arguments>
             </block>
 
