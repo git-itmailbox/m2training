@@ -8,7 +8,8 @@
     <fieldset class="fieldset">
         <legend class="legend">
             <span><?= $block->escapeHtml(__('Leave your feedback')) ?></span>
-        </legend><br />
+        </legend>
+        <br/>
         <div class="field name required">
             <label class="label" for="author_name">
                 <span><?= $block->escapeHtml(__('Name')) ?></span>
@@ -34,15 +35,16 @@
                 <span><?= $block->escapeHtml(__('What’s on your mind?')) ?></span>
             </label>
             <div class="control">
-<textarea name="message" id="message"
-          title="<?= $block->escapeHtmlAttr(__('What’s on your mind?')) ?>"
-          class="input-text" cols="5" rows="3" data-validate="{required:true}"></textarea>
+                <textarea name="message" id="message"
+                          title="<?= $block->escapeHtmlAttr(__('What’s on your mind?')) ?>"
+                          class="input-text" cols="5" rows="3" data-validate="{required:true}">
+                </textarea>
             </div>
         </div>
     </fieldset>
     <div class="actions-toolbar">
         <div class="primary">
-            <input type="hidden" name="hideit" id="hideit" value="" />
+            <input type="hidden" name="hideit" id="hideit" value=""/>
             <button type="submit" title="<?= $block->escapeHtmlAttr(__('Submit')) ?>"
                     class="action submit primary">
                 <span><?= $block->escapeHtml(__('Submit')) ?></span>
