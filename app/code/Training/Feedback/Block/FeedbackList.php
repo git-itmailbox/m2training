@@ -22,6 +22,9 @@ class FeedbackList extends Template
 
     private $timezone;
 
+    /** @var  \Training\Feedback\Model\ResourceModel\Feedback  */
+    private $feedbackResource;
+
     private $request;
 
     public function __construct(
@@ -29,12 +32,14 @@ class FeedbackList extends Template
         \Training\Feedback\Model\ResourceModel\Feedback\CollectionFactory $collectionFactory,
         \Magento\Framework\Stdlib\DateTime\Timezone $timezone,
         \Magento\Framework\App\RequestInterface $request,
+        \Training\Feedback\Model\ResourceModel\Feedback $feedbackResource,
         array $data = array()
     ) {
         parent::__construct($context, $data);
         $this->collectionFactory = $collectionFactory;
         $this->timezone = $timezone;
         $this->request = $request;
+        $this->feedbackResource = $feedbackResource;
     }
     public function getFeedbackCollection()
     {
@@ -62,17 +67,29 @@ class FeedbackList extends Template
         }
         return '';
     }
+
     public function getLimit()
     {
         return static::PAGE_SIZE;
     }
+
     public function getAddFeedbackUrl()
     {
         return $this->getUrl('training_feedback/index/form');
     }
+
     public function getFeedbackDate($feedback)
     {
         return $this->timezone->formatDateTime($feedback->getCreationTime());
     }
 
+    public function getAllFeedbackNumber()
+    {
+        return $this->feedbackResource->getAllFeedbackNumber();
+    }
+
+    public function getActiveFeedbackNumber()
+    {
+        return $this->feedbackResource->getActiveFeedbackNumber();
+    }
 }
