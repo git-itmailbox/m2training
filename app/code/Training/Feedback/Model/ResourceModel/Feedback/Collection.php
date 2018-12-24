@@ -4,6 +4,8 @@ namespace Training\Feedback\Model\ResourceModel\Feedback;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
+    protected $_eventObject = 'feedback_collection';
+    protected $_eventPrefix = 'training_feedback_collection';
 
     protected function _construct()
     {
