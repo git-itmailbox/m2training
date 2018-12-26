@@ -4,9 +4,10 @@ namespace Training\Feedback\Model;
 
 
 use Magento\Framework\Model\AbstractExtensibleModel;
+use Training\Feedback\Api\Data\FeedbackExtensionInterface;
 use Training\Feedback\Api\Data\FeedbackInterface;
 
-class Feedback extends \Magento\Framework\Model\AbstractModel implements FeedbackInterface
+class Feedback extends AbstractExtensibleModel implements FeedbackInterface
 {
     const STATUS_ACTIVE = 1;
     const STATUS_INACTIVE = 0;
@@ -167,23 +168,23 @@ class Feedback extends \Magento\Framework\Model\AbstractModel implements Feedbac
         return $this->setData(self::IS_ACTIVE, $isActive);
     }
 
-//    /**
-//     * {@inheritdoc}
-//     *
-//     * @return FeedbackExtensionInterface|null
-//     */
-//    public function getExtensionAttributes()
-//    {
-//        return $this->_getExtensionAttributes();
-//    }
-//    /**
-//     * {@inheritdoc}
-//     *
-//     * @param FeedbackExtensionInterface $extensionAttributes
-//     * @return $this
-//     */
-//    public function setExtensionAttributes(FeedbackExtensionInterface $extensionAttributes)
-//    {
-//        return $this->_setExtensionAttributes($extensionAttributes);
-//    }
+    /**
+     * {@inheritdoc}
+     *
+     * @return FeedbackExtensionInterface|null
+     */
+    public function getExtensionAttributes()
+    {
+        return $this->_getExtensionAttributes();
+    }
+    /**
+     * {@inheritdoc}
+     *
+     * @param FeedbackExtensionInterface $extensionAttributes
+     * @return $this
+     */
+    public function setExtensionAttributes(FeedbackExtensionInterface $extensionAttributes)
+    {
+        return $this->_setExtensionAttributes($extensionAttributes);
+    }
 }

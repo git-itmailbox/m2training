@@ -5,7 +5,7 @@ namespace Training\Feedback\Api\Data;
 
 use Magento\Framework\Api\ExtensibleDataInterface;
 
-interface FeedbackInterface
+interface FeedbackInterface extends ExtensibleDataInterface
 {
     /**#@+*/
     const FEEDBACK_ID = 'feedback_id';
@@ -121,20 +121,20 @@ interface FeedbackInterface
      */
     public function setIsActive($isActive);
 
-//    /**
-//     * Retrieve existing extension attributes object.
-//     *
-//     * @return \Training\Feedback\Api\Data\FeedbackExtensionInterface|null
-//     */
-//    public function getExtensionAttributes();
-//
-//    /**
-//     * Set an extension attributes object.
-//     *
-//     * @param \Training\Feedback\Api\Data\FeedbackExtensionInterface $extensionAttributes
-//     * @return $this
-//     */
-//    public function setExtensionAttributes(
-//        \Training\Feedback\Api\Data\FeedbackExtensionInterface $extensionAttributes
-//    );
+    /**
+     * Retrieve existing extension attributes object.
+     *
+     * @return \Training\Feedback\Api\Data\FeedbackExtensionInterface|null
+     */
+    public function getExtensionAttributes();
+
+    /**
+     * Set an extension attributes object.
+     *
+     * @param \Training\Feedback\Api\Data\FeedbackExtensionInterface $extensionAttributes
+     * @return $this
+     */
+    public function setExtensionAttributes(
+        \Training\Feedback\Api\Data\FeedbackExtensionInterface $extensionAttributes
+    );
 }
