@@ -25,7 +25,6 @@ class FeedbackExtension
         /** @var \Training\Feedback\Api\Data\FeedbackExtensionInterface $extensionAttributes */
         $extensionAttributes = $this->extensionAttributesFactory->create();
         $subject->setExtensionAttributes($extensionAttributes);
-
-        return $extensionAttributes;
+        return $subject;
     }
 }

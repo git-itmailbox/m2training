@@ -2,18 +2,12 @@
 
 namespace Training\FeedbackProduct\Model\ResourceModel;
 
-use Training\FeedbackProduct\Model\FeedbackDataLoader;
-
 class FeedbackProducts extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
     protected function _construct()
     {
         $this->_init('training_feedback_product', 'row_id');
     }
-
-    //$productIds = $this->feedbackProductsResource->loadProductRelations($feedback->getId());
-    //$this->feedbackProductsResource->saveProductRelations($feedback->getId(), $productIds);
-
 
     public function loadProductRelations(int $feedbackId)
     {
@@ -22,7 +16,6 @@ class FeedbackProducts extends \Magento\Framework\Model\ResourceModel\Db\Abstrac
             ->from($this->getTable('training_feedback_product'), ['product_id'])
             ->where('feedback_id = ?', $feedbackId);
         return $adapter->fetchCol($select);
-
     }
 
     public function saveProductRelations($feedbackId, array $productIds)
